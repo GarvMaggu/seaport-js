@@ -288,6 +288,8 @@ export class Seaport {
 
     return {
       actions,
+      parameters: orderParameters,
+      counter: resolvedCounter,
       executeAllActions: () =>
         executeAllActions(actions) as Promise<OrderWithCounter>,
     };

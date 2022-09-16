@@ -210,6 +210,8 @@ export type OrderExchangeActions<T> = readonly [
 ];
 
 export type OrderUseCase<T extends CreateOrderAction | ExchangeAction> = {
+  parameters?: OrderParameters;
+  counter?: number;
   actions: T extends CreateOrderAction
     ? CreateOrderActions
     : OrderExchangeActions<T extends ExchangeAction<infer U> ? U : never>;
