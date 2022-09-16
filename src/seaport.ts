@@ -322,6 +322,8 @@ export class Seaport {
     const actions = [...approvalActions, createOrderAction] as const;
 
     return {
+      parameters: orderParameters,
+      counter: resolvedCounter,
       actions,
       executeAllActions: () =>
         executeAllActions(actions) as Promise<OrderWithCounter>,
